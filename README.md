@@ -1,42 +1,38 @@
-# Parcial práctico - Sección 1 - 202020
+# Parcial práctico - Sección 2 - 202110
 
 ## Instrucciones
 
 1. Haga un fork de este repositorio
 2. Clone el repositorio bifurcado en su máquina virtual
 3. Abra los proyectos en Netbeans
-4. En Netbeans vaya a _Services > Databases > JavaDB_ y cree una base de datos que se llame _videogames_ (los demás campos déjelos en blanco)
+4. En Netbeans vaya a _Services > Databases > JavaDB_ y cree una base de datos que se llame _parcial_ (los demás campos déjelos en blanco)
 
 ## Punto 1 (30%). Persistencia
 
-Esta aplicación tiene el propósito de gestionar la información de un conjunto de videojuegos.
+Esta aplicación tiene el propósito de gestionar la información de un conjunto de fincas de recreo.
 
-(10%) Cree la entidad _VideojuegoEntity_ en la carpeta correspondiente. Un videojuego tiene un nombre, una marca, unos países donde se pueden jugar, un versión, una calificación en número de estrellas y un id de tipo _Long_ que representa su llave primaria.
+(10%) Cree la entidad _FincaEntity_ en la carpeta correspondiente. Una finca tiene un nombre, una extensión (en metros cuadrados), un municipio al cual pertenece, un clima promedio, un numero de habitaciones, una calificación en número de estrellas y un id de tipo _Long_ que representa su llave primaria.
  
 (10%) Implementar la persistencia de la entidad.
  
-(10%) Crear la prueba unitaria en la clase correspondiente para el método crear, el cual valida si está correcta la implementación de la persistencia de la entidad. Al ejecutar la prueba esta debe pasar correctamente.
-
-
+(10%) Crear la prueba unitaria en la clase correspondiente para el método crear, la cual valida si está correcta la implementación de la persistencia de la entidad. Al ejecutar la prueba esta debe pasar correctamente.
 
 ## Punto 2 (40%). Lógica
 
-Usted debe crear la lógica de aplicación que cubra las reglas de negocio para la entidad _VideojuegoEntity_. Las reglas de negocio para crear un videojuego son:
+Usted debe crear la lógica de aplicación que cubra las reglas de negocio para la entidad _FincaEntity_. Las reglas de negocio para crear una finca son:
 
-* No puede existir 2 videojuegos con el mismo nombre y la misma versión. Pueden existir videojuegos con el mismo nombre, pero con versiones diferentes.
-* La valor del campo "países donde se puede jugar" tiene que estar dentro de las siguientes opciones: "Colombia", "USA", "UK", "Argentina", "Peru", "Brasil", "China".
+* No pueden existir 2 fincas con el mismo nombre.
+* El número de habitaciones debe ser un entero mayor de cero.
 
 (20%) Crear el método en la capa de lógica que valide las reglas de negocio y solicita persistir en caso de que todas pasen (sólo para el método crear).
 
-(20%) Crear al menos tres pruebas unitarias: una que valida el escenario ideal en que todas las reglas de negocio se aprueban, y dos en que la regla de negocio falla. Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el objeto sea persistido, de lo contrario debe lanzar una excepción _BusinessLogicException_ con un mensaje donde se especifique el problema.
-
-BONO(5%): Crear la siguiente regla de negocio con su respectiva prueba -> La clasificación en estrellas debe ser un número entre uno y diez. 
+(20%) Crear al menos tres pruebas unitarias: una que valida el escenario ideal en que todas las reglas de negocio se aprueban, y otras dos en las que las reglas de negocio fallan. Si las reglas de negocio se cumplen, se debe llamar la persistencia para que el objeto sea persistido, de lo contrario debe lanzar una excepción _BusinessLogicException_ con un mensaje donde se especifique el problema.
 
 ## Punto 3 (30%). Pruebas de integración
 
-(5%) Cree la clase _VideojuegoDTO_ con los atributos correspondientes, los getters, los setters y un constructor vacío.
+(5%) Cree la clase _FincaDTO_ con los atributos correspondientes, los getters, los setters y un constructor vacío.
  
-(5%) Crear el método toEntity que retorna un objeto _VideojuegoEntity_ con los datos del objeto _VideojuegoDTO_.
+(5%) Crear el método toEntity que retorna un objeto _FincaEntity_ con los datos del objeto _FincaDTO_.
  
 (5%) Agregue el método constructor que recibe un _VideojuegoEntity_ y haga el mapeo correspondiente entre ambas clases.
  
