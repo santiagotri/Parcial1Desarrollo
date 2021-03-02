@@ -34,44 +34,44 @@ Usted debe crear la lógica de aplicación que cubra las reglas de negocio para 
  
 (5%) Crear el método toEntity que retorna un objeto _FincaEntity_ con los datos del objeto _FincaDTO_.
  
-(5%) Agregue el método constructor que recibe un _VideojuegoEntity_ y haga el mapeo correspondiente entre ambas clases.
+(5%) Agregue el método constructor que recibe un _FincaEntity_ y haga el mapeo correspondiente entre ambas clases.
  
-(5%) Modificar en la clase _VideojuegoResource_ el método createVidejuego para que llame al método de la lógica que crea la entidad, y retorne al usuario el nuevo objeto creado.
+(5%) Modificar en la clase _FincaResource_ el método createFinca para que llame al método de la lógica que crea la entidad, y retorne al usuario el nuevo objeto creado.
 
-(10%) Hacer las pruebas de Postman para la creación de un nuevo recurso. En repositorio cree una carpeta “images” y suba allí las pruebas. Deberá haber mínimo dos pruebas, una donde se cree correctamente el recurso y otra donde falle la creación por violación a las reglas de negocio. 
+(10%) Hacer las pruebas de Postman para la creación de un nuevo recurso. En repositorio cree una carpeta “images” y suba allí las pruebas. Deberá haber mínimo tres pruebas, una donde se cree correctamente el recurso y otras dos donde falle la creación por violación a las reglas de negocio. 
 
-BONO(5%): Agregue en la entrega las pruebas de postman como una colección que pueda importar la persona que califica.
+### Prueba 1. Creación correcta de una finca:
 
-### Prueba 1. Creación correcta de un videojuego:
+nombre, una extensión (en metros cuadrados), un municipio al cual pertenece, un clima promedio, un numero de habitaciones, una calificación en número de estrellas y un id de tipo _Long_ que representa su llave primaria.
 
 ```
 Method: POST
-URL: http://localhost:8080/s1_parcial1-api/api/videojuegos
+URL: http://localhost:8080/s1_parcial-api/api/fincas
 Body:
 {
-    "nombre": "Super Mario 3D all stars",
-    "marca": "Nintendo",
-    "version": 1.0,
-    "pais": "Colombia",
-    "estrellas": 5
+    "nombre": "Finca la Esperanza",
+    "municipio": "Calarcá",
+    "clima": 20,
+    "habitaciones": 7,
+    "calificacion": 5
 }
 Response: 200
 ```
 
-### Prueba 2. Creación incorrecta por país fuera de la lista permitida:
+### Prueba 2. Creación incorrecta por número de estrellas no válido:
 
 ```
 Method: POST
-URL: http://localhost:8080/s1_parcial1-api/api/videojuegos
+URL: http://localhost:8080/s1_parcial-api/api/fincas
 Body:
 {
-    "nombre": "Super Mario 3D all stars",
-    "marca": "Nintendo",
-    "version": 1.0,
-    "pais": "Antartica",
-    "estrellas": 5
+    "nombre": "Finca la Esperanza",
+    "municipio": "Calarcá",
+    "clima": 20,
+    "habitaciones": -4.9,
+    "calificacion": 5
 }
-Response: 412
+Response: 414
 ```
 
 ## Entrega
@@ -82,4 +82,4 @@ Response: 412
 
 3. Cree un release de su código con el nombre "Parcial1_S1_2603". 
 
-4. Suba el archivo zip del release como respuesta a la evaluación en SICUA
+4. Suba el archivo zip del release como respuesta a la evaluación en Brightspace
