@@ -11,11 +11,11 @@
 
 Esta aplicación tiene el propósito de gestionar la información de un conjunto de fincas de recreo.
 
-(10%) Cree la entidad _FincaEntity_ en la carpeta correspondiente. Una finca tiene un nombre, una extensión (en metros cuadrados), un municipio al cual pertenece, un clima promedio, un numero de habitaciones, una calificación en número de estrellas y un id de tipo _Long_ que representa su llave primaria.
+(10%) Cree la entidad _FincaEntity_ en el paquete correspondiente. Una finca tiene un nombre, una extensión (en metros cuadrados), un municipio al cual pertenece, un clima promedio, un numero de habitaciones, una calificación en número de estrellas y un id de tipo _Long_ que representa su llave primaria.
  
-(10%) Implementar la persistencia de la entidad.
+(10%) Implemente la persistencia de la entidad.
  
-(10%) Crear la prueba unitaria en la clase correspondiente para el método crear, la cual valida si está correcta la implementación de la persistencia de la entidad. Al ejecutar la prueba esta debe pasar correctamente.
+(10%) Cree la prueba unitaria en la clase correspondiente para el método crear, la cual valida si está correcta la implementación de la persistencia de la entidad. Al ejecutar la prueba esta debe pasar correctamente.
 
 ## Punto 2 (40%). Lógica
 
@@ -32,17 +32,15 @@ Usted debe crear la lógica de aplicación que cubra las reglas de negocio para 
 
 (5%) Cree la clase _FincaDTO_ con los atributos correspondientes, los getters, los setters y un constructor vacío.
  
-(5%) Crear el método toEntity que retorna un objeto _FincaEntity_ con los datos del objeto _FincaDTO_.
+(5%) Cree el método toEntity que retorna un objeto _FincaEntity_ con los datos del objeto _FincaDTO_.
  
 (5%) Agregue el método constructor que recibe un _FincaEntity_ y haga el mapeo correspondiente entre ambas clases.
  
-(5%) Modificar en la clase _FincaResource_ el método createFinca para que llame al método de la lógica que crea la entidad, y retorne al usuario el nuevo objeto creado.
+(5%) Modifique en la clase _FincaResource_ el método createFinca para que llame al método de la lógica que crea la entidad, y retorne al usuario el nuevo objeto creado.
 
-(10%) Hacer las pruebas de Postman para la creación de un nuevo recurso. En repositorio cree una carpeta “images” y suba allí las pruebas. Deberá haber mínimo tres pruebas, una donde se cree correctamente el recurso y otras dos donde falle la creación por violación a las reglas de negocio. 
+(10%) Haga las pruebas de Postman para la creación de un nuevo recurso. En repositorio cree una carpeta “images” y suba allí las pruebas. Deberá haber mínimo tres pruebas, una donde se cree correctamente el recurso y otras dos donde falle la creación por violación a las reglas de negocio. 
 
 ### Prueba 1. Creación correcta de una finca:
-
-nombre, una extensión (en metros cuadrados), un municipio al cual pertenece, un clima promedio, un numero de habitaciones, una calificación en número de estrellas y un id de tipo _Long_ que representa su llave primaria.
 
 ```
 Method: POST
@@ -58,7 +56,7 @@ Body:
 Response: 200
 ```
 
-### Prueba 2. Creación incorrecta por número de estrellas no válido:
+### Prueba 2. Creación incorrecta por número de habitaciones no válido:
 
 ```
 Method: POST
