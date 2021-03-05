@@ -30,7 +30,7 @@ Usted debe crear la lógica de aplicación que cubra las reglas de negocio para 
 
 ## Punto 3 (30%). Pruebas de integración
 
-(5%) Cree la clase _FincaDTO_ con los atributos correspondientes, los getters, los setters y un constructor vacío.
+(5%) Modifique la clase _FincaDTO_ y agregue los atributos correspondientes, los getters, los setters y un constructor vacío.
  
 (5%) Cree el método toEntity que retorna un objeto _FincaEntity_ con los datos del objeto _FincaDTO_.
  
