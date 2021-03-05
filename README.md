@@ -21,7 +21,7 @@ Esta aplicación tiene el propósito de gestionar la información de un conjunto
 
 Usted debe crear la lógica de aplicación que cubra las reglas de negocio para la entidad _FincaEntity_. Las reglas de negocio para crear una finca son:
 
-* No pueden existir 2 fincas con el mismo nombre.
+* El nombre debe contener más de tres caracteres. 
 * El número de habitaciones debe ser un entero mayor de cero.
 
 (20%) Crear el método en la capa de lógica que valide las reglas de negocio y solicita persistir en caso de que todas pasen (sólo para el método crear).
@@ -56,7 +56,23 @@ Body:
 Response: 200
 ```
 
-### Prueba 2. Creación incorrecta por número de habitaciones no válido:
+### Prueba 2. Creación incorrecta por nombre no válido:
+
+```
+Method: POST
+URL: http://localhost:8080/s1_parcial-api/api/fincas
+Body:
+{
+    "nombre": "",
+    "municipio": "Calarcá",
+    "clima": 20,
+    "habitaciones": 7,
+    "calificacion": 5
+}
+Response: 414
+```
+
+### Prueba 3. Creación incorrecta por número de habitaciones no válido:
 
 ```
 Method: POST
