@@ -6,6 +6,9 @@
 2. Clone el repositorio bifurcado en su máquina virtual
 3. Abra los proyectos en Netbeans
 4. En Netbeans vaya a _Services > Databases > JavaDB_ y cree una base de datos que se llame _parcial_ (los demás campos déjelos en blanco)
+5. Ejecute Clean & Build sobre el proyecto principal _s2_parcial_ y confirme que el resultado es exitoso.
+
+Recuerde, este es un examen individual, ante cualquier sospecha de fraude su nota será cero.
 
 ## Punto 1 (30%). Persistencia
 
