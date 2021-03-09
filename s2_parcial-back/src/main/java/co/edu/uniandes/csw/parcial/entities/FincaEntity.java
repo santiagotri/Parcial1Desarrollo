@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.uniandes.csw.parcial.dtos;
+package co.edu.uniandes.csw.parcial.entities;
 
-import co.edu.uniandes.csw.parcial.entities.FincaEntity;
 import java.io.Serializable;
+import javax.persistence.Entity;
+import uk.co.jemos.podam.common.PodamExclude;
 import uk.co.jemos.podam.common.PodamIntValue;
+import uk.co.jemos.podam.common.PodamStringValue;
 
 /**
  *
- * @author josejbocanegra
+ * @author Santiago Triana 201923265
  */
-public class FincaDTO implements Serializable {
-
+@Entity
+public class FincaEntity extends BaseEntity implements Serializable {
     
-    private Long id;
-
+    
     private String nombre;
     
     @PodamIntValue(minValue = 0)
@@ -31,39 +32,6 @@ public class FincaDTO implements Serializable {
     
     @PodamIntValue(minValue = 0, maxValue = 5)
     private Integer calificacion;
-    
-    
-    
-    public FincaDTO (){}
-
-     public FincaEntity toEntity (){
-        FincaEntity rta = new FincaEntity();
-        rta.setId(this.getId());
-        rta.setNombre(this.nombre);
-        rta.setExtension(this.extension);
-        rta.setClimaPromedio(this.climaPromedio);
-        rta.setNumeroHabitaciones(this.numeroHabitaciones);
-        rta.setCalificacion(this.calificacion);
-        return rta;
-    }
-     
-     public FincaDTO (FincaEntity fincaEntity){
-        if(fincaEntity!=null){
-            this.id = fincaEntity.getId();
-            this.nombre = fincaEntity.getNombre();
-            this.extension = fincaEntity.getExtension();
-            this.climaPromedio = fincaEntity.getClimaPromedio();
-            this.numeroHabitaciones = fincaEntity.getNumeroHabitaciones();
-            this.calificacion = fincaEntity.getCalificacion();
-        }
-    }
-
-    /**
-     * @return the id
-     */
-    public Long getId() {
-        return id;
-    }
 
     /**
      * @return the nombre
@@ -101,13 +69,6 @@ public class FincaDTO implements Serializable {
     }
 
     /**
-     * @param id the id to set
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    /**
      * @param nombre the nombre to set
      */
     public void setNombre(String nombre) {
@@ -141,9 +102,6 @@ public class FincaDTO implements Serializable {
     public void setCalificacion(Integer calificacion) {
         this.calificacion = calificacion;
     }
-
-
-
 
     
 }
